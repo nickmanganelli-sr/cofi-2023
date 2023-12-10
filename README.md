@@ -13,7 +13,7 @@ chmod u+x Mambaforge-Linux-x86_64.sh
 
 git clone https://github.com/nickmanganelli-sr/cofi-2023.git
 cd cofi-2023
-mamba create -f environment.yml
+mamba env create -f environment.yml
 mamba activate cofi-2023-ext
 jupyter lab # this will create a JupyterLab instance from which you can run all the notebooks.
 ```
