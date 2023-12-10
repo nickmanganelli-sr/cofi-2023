@@ -21,6 +21,7 @@ dependencies:
     # - pyg
     - ipykernel
     - jupyterlab
+    - ipywidgets
     - tqdm
     - h5py
     - scikit-learn
