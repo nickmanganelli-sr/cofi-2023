@@ -1,4 +1,4 @@
-name: cofi-2023
+name: cofi-2023-ext
 channels:
     - pytorch
     - conda-forge
@@ -6,15 +6,18 @@ dependencies:
     - python==3.10
     - pip
     - rich
+    - onnx
     - numpy
     - matplotlib
     - uproot
     - awkward
     - pandas
+    - keras
+    - tensorflow
     - pytorch::pytorch
     - pytorch-lightning
     - torchvision
-    - tritonclient
+    - torchaudio
     - ipykernel
     - jupyterlab
     - ipywidgets
@@ -22,5 +25,6 @@ dependencies:
     - h5py
     - scikit-learn
     - scikit-optimize
+    - tritonclient
     - pip:
         - -r requirements-conda-extra.txt
