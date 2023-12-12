@@ -2,8 +2,12 @@
 
 This repo usese the CMS ML HATS tutorial as a base for examples shown at the ML Basic Tools and Resources sessions of the COFI 2023 Winter School
 
-To run locally, run these commands from your terminal:
+To run locally, run commands like these from your terminal:
 
+## Streamlined environment for the COFI days 1 and 2 notebook demonstrations
+This environment focuses on having pytorch, torchvision, pytorch_lightning, wandb, tritonclient, jupyter, and a few other niceties installed.
+
+This will be slightly easier to solve with the old conda installer
 ```bash
 # Download the setup bash file for your machine from here https://github.com/conda-forge/miniforge#mambaforge
 # e.g. wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
@@ -14,7 +18,27 @@ chmod u+x Mambaforge-Linux-x86_64.sh
 git clone https://github.com/nickmanganelli-sr/cofi-2023.git
 cd cofi-2023
 mamba env create -f environment.yml
-mamba activate cofi-2023-ext
+conda activate cofi-2023
+jupyter lab # this will create a JupyterLab instance from which you can run all the notebooks.
+```
+
+## Extended environment
+This environment focuses on installing as much as possible, capable of running pytorch, keras, tensorflow, pytorch_geometric,
+and many other packages (in addition to the ones in the streamlined environment). The yaml file and environment name differ.
+
+WARNING: This is a very heavy installation, and solving dependencies on different OS's may take unreasonably long with
+an old installation of conda. Please ensure you use one with the mamba solver (e.g. with the directed miniforge installation below)
+```bash
+# Download the setup bash file for your machine from here https://github.com/conda-forge/miniforge#mambaforge
+# e.g. wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
+# Install: (the mamba directory can end up taking O(1-10GB) so make sure the directory you're using allows that quota)
+chmod u+x Mambaforge-Linux-x86_64.sh
+./Mambaforge-Linux-x86_64.sh  # follow instructions in the installation
+
+git clone https://github.com/nickmanganelli-sr/cofi-2023.git
+cd cofi-2023
+mamba env create -f environment-ext.yml
+conda activate cofi-2023-ext
 jupyter lab # this will create a JupyterLab instance from which you can run all the notebooks.
 ```
 
